@@ -35,11 +35,6 @@ subprojects {
 		testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	}
 
-	dependencyManagement {
-		imports {
-			mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
-		}
-	}
 
 	tasks.withType<Test> {
 		useJUnitPlatform()
@@ -50,15 +45,4 @@ subprojects {
 			freeCompilerArgs.addAll("-Xjsr305=strict")
 		}
 	}
-}
-
-kotlin {
-	compilerOptions {
-		freeCompilerArgs.addAll("-Xjsr305=strict")
-	}
-}
-
-
-tasks.withType<Test> {
-	useJUnitPlatform()
 }
