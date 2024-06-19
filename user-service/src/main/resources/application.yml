@@ -1,6 +1,16 @@
 spring:
   application:
-    name: gateway
+    name: user-service
+  datasource:
+    url: jdbc:postgresql://localhost:5544/user-service
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  data:
+    jdbc:
+      dialect: postgresql
+server:
+  port: 0
 
 eureka:
   instance:
@@ -11,6 +21,3 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka
-
-server:
-  port: 8080
