@@ -9,6 +9,9 @@ services:
 
   eureka-service:
     image: eureka-service
+    # for testing
+    ports:
+      - 8761:8761
     networks:
       - eureka-net
 
@@ -19,6 +22,7 @@ services:
     networks:
       - eureka-net
       - user-service-net
+      - redis-net
 
   user-service-db:
     image: postgres
@@ -47,8 +51,6 @@ services:
       - example-service-net
   redis:
     image: redis
-    ports:
-      - 5546:6379
     networks:
       - redis-net
 
