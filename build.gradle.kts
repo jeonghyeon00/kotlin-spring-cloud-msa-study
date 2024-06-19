@@ -34,9 +34,17 @@ subprojects {
 		testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 		testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	}
+
+	dependencyManagement {
+		imports {
+			mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
+		}
+	}
+
 	tasks.withType<Test> {
 		useJUnitPlatform()
 	}
+
 	kotlin {
 		compilerOptions {
 			freeCompilerArgs.addAll("-Xjsr305=strict")
