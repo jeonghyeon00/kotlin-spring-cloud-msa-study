@@ -22,8 +22,6 @@ services:
 
   user-service-db:
     image: postgres
-    ports:
-      - 5544:5432
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -41,8 +39,6 @@ services:
 
   example-service-db:
     image: postgres
-    ports:
-      - 5545:5432
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
