@@ -1,4 +1,11 @@
 services:
+  gateway:
+    image: gateway
+    ports:
+      - 8080:8080
+    networks:
+      - eureka-net
+
   user-service-db:
     image: postgres
     ports:
@@ -7,6 +14,9 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: user-service
+    networks:
+      - user-service-net
+
   example-service-db:
     image: postgres
     ports:
@@ -15,7 +25,17 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: example-service
+    networks:
+      - example-service-net
   redis:
     image: redis
     ports:
       - 5546:6379
+    networks:
+      - redis-net
+
+networks:
+  eureka-net:
+  redis-net:
+  user-service-net:
+  example-service-net:
