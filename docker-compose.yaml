@@ -6,6 +6,20 @@ services:
     networks:
       - eureka-net
 
+
+  eureka-service:
+    image: eureka-service
+    networks:
+      - eureka-net
+
+  user-service:
+    image: user-service
+    depends_on:
+      - user-service-db
+    networks:
+      - eureka-net
+      - user-service-net
+
   user-service-db:
     image: postgres
     ports:
@@ -16,6 +30,14 @@ services:
       POSTGRES_DB: user-service
     networks:
       - user-service-net
+
+  example-service:
+    image: example-service
+    depends_on:
+      - example-service-db
+    networks:
+      - eureka-net
+      - example-service-net
 
   example-service-db:
     image: postgres
