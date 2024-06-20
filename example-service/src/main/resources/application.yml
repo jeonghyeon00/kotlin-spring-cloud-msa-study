@@ -1,23 +1,5 @@
 spring:
   application:
     name: example-service
-  datasource:
-    url: jdbc:postgresql://example-service-db:5432/example-service
-    username: postgres
-    password: postgres
-    driver-class-name: org.postgresql.Driver
-  data:
-    jdbc:
-      dialect: postgresql
 server:
   port: 0
-
-eureka:
-  instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-    hostname: example-service
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://eureka-service:8761/eureka

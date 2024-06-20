@@ -1,0 +1,22 @@
+services:
+  user-service-db:
+    image: postgres:16.2
+    ports:
+      - 5554:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: user-service
+
+  example-service-db:
+    image: postgres:16.2
+    ports:
+      - 5555:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: example-service
+  redis:
+    image: redis
+    ports:
+      - 7777:6379
