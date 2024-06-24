@@ -1,6 +1,6 @@
 package com.example.jeonghyeon.userservice.entity
 
-import com.example.jeonghyeon.userservice.constants.Role
+import com.example.jeonghyeon.common.constants.Role
 import jakarta.persistence.*
 
 @Entity

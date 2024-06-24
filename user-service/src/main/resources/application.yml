@@ -7,3 +7,5 @@ spring:
       ddl-auto: update
 server:
   port: 0
+jwt:
+  secret: Lixr7oKfEFVpULIjgV4Y5EBepQewI5wFKbD3kW6vw38aLSLZj63xAoK0bx3Zvp8jtG5l1G9drBZ9dzvjxJh7MZT8pgVSgjgTMmM3PpWVKahBwxS1kJDUc7trORwr0rIXMIb6Y06Wz6HeURztt1qf5XQ2apXp8jD9cTfZLODFgrIxEaVKwq1EZbsvKkcF00cbfGO5yXhdgj6wq4hq0HamDzu7L6HIxWIKvL9PojAHVJidKD5QobRhmaqHac1FEDfb
