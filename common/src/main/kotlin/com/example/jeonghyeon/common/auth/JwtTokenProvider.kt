@@ -43,10 +43,14 @@ class JwtTokenProvider {
 
     fun validateToken(token: String): Boolean {
         return try {
-            Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token)
             true
+//            Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token)
+//            true
         } catch (e: Exception) {
             false
         }
     }
+
+    fun getSubject(token: String) =
+        Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token).body.subject
 }

@@ -10,6 +10,7 @@ spring:
             - Path=/example-service/api/**
           filters:
             - StripPrefix=1
+            - JwtTokenFilter
 
         - id: user-service
           uri: lb://USER-SERVICE
