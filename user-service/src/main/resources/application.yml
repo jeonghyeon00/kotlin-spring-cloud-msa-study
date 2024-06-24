@@ -1,5 +1,9 @@
 spring:
   application:
     name: user-service
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
 server:
   port: 0
